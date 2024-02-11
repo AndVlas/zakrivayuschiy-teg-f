@@ -1,0 +1,7 @@
+.header__title {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-size: clamp(3.063rem, 2.71rem + 1.502vw, 4.063rem);
+  margin-bottom: 25px;
+}

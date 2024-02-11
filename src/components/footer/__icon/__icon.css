@@ -1,0 +1,12 @@
+.button__icon {
+  margin-right: 10px;
+  width: 21px;
+}
+
+@media (width <= 375px) {
+
+  .button__icon {
+    width: 28px;
+    margin-right: 0;
+  }
+}

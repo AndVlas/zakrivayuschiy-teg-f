@@ -1,0 +1,34 @@
+.dialog__button-close {
+  height: 38px;
+  border: 2px solid var(--accent-color);
+  background-color: transparent;
+  cursor: pointer;
+  font-family: var(--font-accent);
+  justify-self: flex-end;
+  font-size: 14px;
+  position: relative;
+  box-shadow: 0 0 0 var(--accent-color);
+  transition: box-shadow 0.3s ease;
+  margin: 0 30px 30px;
+}
+
+.dialog__button-close:focus-visible {
+  outline: none;
+  box-shadow: 2px 2px 0 var(--accent-color);
+  transition: box-shadow 0.3s ease;
+}
+
+.dialog__button-close::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-color: var(--accent-color);
+  height: 100%;
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.5s ease-in-out;
+}
+
+.dialog__button-close:hover::before {
+  transform: scaleX(1);
+}

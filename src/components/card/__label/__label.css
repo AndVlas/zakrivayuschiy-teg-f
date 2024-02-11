@@ -1,0 +1,22 @@
+.card__label {
+  position: absolute;
+  font-family: var(--font-accent);
+  mix-blend-mode: hard-light;
+  opacity: 0.5;
+  text-shadow: -0.5px 0 var(--main-color), 0 0.5px var(--main-color),
+    0.5px 0 var(--main-color), 0 -0.5px var(--main-color);
+  margin: 25px;
+  font-size: 14px;
+}
+
+@supports (
+  (text-stroke: 0.5px var(--main-color)) or
+    (-webkit-text-stroke: 0.5px var(--main-color))
+) {
+
+  .card__label {
+    -webkit-text-stroke: 0.5px var(--main-color);
+    text-stroke: 0.5px var(--main-color);
+    text-shadow: none;
+  }
+}

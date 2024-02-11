@@ -1,0 +1,7 @@
+.card {
+  /* display: grid;
+    grid-template-rows: 1fr 1fr 1fr;  */
+  background-color: var(--main-color);
+  border: 2px solid var(--accent-color);
+  margin-bottom: 50px;
+}

@@ -1,0 +1,25 @@
+.footer__button-text {
+  position: absolute;
+  z-index: 1;
+  color: var(--text-color);
+  mix-blend-mode: difference;
+  opacity: 0;
+  transition: opacity 0.6s ease;
+  height: 55px;
+  width: 335px;
+  padding: 21px 19px 17px 50px;
+}
+
+.footer__button-text:hover {
+  opacity: 1;
+  transition: opacity 0.6s ease;
+}
+
+@media (width <= 375px) {
+
+  .footer__button-text {
+    padding: 51px 18px 0;
+    height: 84px;
+    width: 306px;
+  }
+}
