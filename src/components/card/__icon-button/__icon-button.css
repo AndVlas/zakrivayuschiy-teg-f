@@ -1,4 +1,7 @@
 .card__icon-button {
+  display: flex;
+  justify-content: center;
+  align-content: center;
   padding: 0;
   border: none;
   font: inherit;
@@ -11,7 +14,10 @@
   transition: outline 0.3s ease;
 }
 
+.card__icon-button:focus {
+  outline: none;
+}
+
 .card__icon-button:focus-visible {
   outline: 2px solid var(--accent-color);
-  transition: outline 0.3s ease;
 }

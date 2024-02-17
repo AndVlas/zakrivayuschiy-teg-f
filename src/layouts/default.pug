@@ -14,7 +14,8 @@ html(lang="ru")
         script(src='./scripts/set-theme.js')
     body.page
         include ../components/header/header
-        block content
+        main.main
+            block content
         include ../components/footer/footer
         include ../components/dialog/dialog
         script(src='./scripts/like.js')

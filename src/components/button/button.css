@@ -1,0 +1,33 @@
+.button {
+    height: 38px;
+    border: 2px solid var(--accent-color);
+    background-color: var(--main-color);
+    cursor: pointer;
+    font-family: var(--font-accent), sans-serif;
+    font-size: 14px;
+    position: relative;
+    box-shadow: 0 0 0 var(--accent-color);
+    transition: box-shadow 0.3s ease;
+}
+
+.button::before{
+    content: "";
+    position: absolute;
+    inset: 0;
+    background-color: var(--accent-color);
+    height: 100%;
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: transform 0.5s ease-in-out;
+}
+
+.button:focus-visible {
+    outline: none;
+    box-shadow: 2px 2px 0 var(--accent-color);
+    transition: box-shadow 0.3s ease;
+  }
+  
+  .button:hover::before {
+    transform: scaleX(1);
+    transition: transform 0.5s ease-in-out;
+  }

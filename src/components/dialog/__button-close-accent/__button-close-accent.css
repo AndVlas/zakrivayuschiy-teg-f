@@ -1,18 +1,6 @@
 .dialog__button-close-accent {
-  position: absolute;
-  z-index: 1;
-  color: var(--text-color);
   left: 0;
   top: 0;
-  mix-blend-mode: difference;
-  opacity: 0;
-  transition: opacity 0.6s ease;
-  height: 38px;
   width: 100%;
   padding: 10px 0;
-}
-
-.dialog__button-close-accent:hover {
-  opacity: 1;
-  transition: opacity 0.6s ease;
 }

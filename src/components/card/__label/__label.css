@@ -1,6 +1,8 @@
 .card__label {
   position: absolute;
-  font-family: var(--font-accent);
+  top: inherit;
+  left: inherit;
+  font-family: var(--font-accent), sans-serif;
   mix-blend-mode: hard-light;
   opacity: 0.5;
   text-shadow: -0.5px 0 var(--main-color), 0 0.5px var(--main-color),

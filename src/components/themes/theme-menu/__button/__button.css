@@ -11,6 +11,10 @@
   transition: opacity 0.3s ease;
 }
 
+.theme-menu__button:hover {
+  outline: none;
+}
+
 .theme-menu__button:focus-visible {
   outline: none;
   opacity: 0.6;
@@ -20,19 +24,18 @@
   content: "";
   display: block;
   transform: scaleX(0);
-}
-
-.theme-menu__button:focus-visible::after {
   height: 2px;
   background-color: var(--accent-color);
   transform-origin: left;
-  transform: scaleX(1);
   transition: transform 0.3s ease;
+}
+
+.theme-menu__button:focus-visible::after {
+  transform: scaleX(1);
 }
 
 .theme-menu__button:hover {
   opacity: 0.6;
-  transition: opacity 0.3s ease;
 }
 
 .theme-menu__button:disabled {
@@ -46,8 +49,9 @@
   inset: 0;
   left: -15px;
   animation-name: pointer;
-  animation-duration: 1s;
+  animation-duration: 0.5s;
   animation-iteration-count: infinite;
   animation-timing-function: ease-in-out;
+  animation-direction: alternate;
   opacity: 0.6;
 }
