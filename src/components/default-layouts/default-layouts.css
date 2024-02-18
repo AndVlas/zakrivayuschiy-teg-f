@@ -27,6 +27,7 @@
   background-image: var(--grad);
   background-repeat: no-repeat;
   background-position: cover;
+  background-attachment: fixed;
   width: clamp(370px, 90%, 700px);
   margin: 100px auto;
   font-size: 18px;

@@ -12,6 +12,7 @@
     repeating-linear-gradient(#000 0 2px, transparent 2px 4px),
     linear-gradient(#007f0c, #004306);
   --text-weight: 465;
+  --title-weight: "wght" 785;
   --text-color: #00cc14;
 }
 
@@ -23,6 +24,7 @@
       repeating-linear-gradient(#000 0 2px, transparent 2px 4px),
       linear-gradient(#007f0c, #004306);
     --text-weight: 465;
+    --title-weight: "wght" 785;
     --text-color: #00cc14;
   }
 }
@@ -34,6 +36,7 @@
   repeating-linear-gradient(#d3d3d3 0 2px, transparent 2px 4px),
   linear-gradient(#e7e7e7, #1a1a1a);
   --text-weight: 400;
+  --title-weight: "wght" 700;
   --text-color: #fff;
 }
 
@@ -45,6 +48,7 @@
     repeating-linear-gradient(#d3d3d3 0 2px, transparent 2px 4px),
     linear-gradient(#e7e7e7, #1a1a1a);
     --text-weight: 400;
+    --title-weight: "wght" 700;
     --text-color: #fff;
   }
 }

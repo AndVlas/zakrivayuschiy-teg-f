@@ -86,9 +86,9 @@
 
 .like-icon.is-liked .main-body {
   fill: var(--fill-color);
-  -webkit-transition: fill 0.3s linear 0.06s;
-  -o-transition: fill 0.3s linear 0.06s;
-  transition: fill 0.3s linear 0.06s;
+  -webkit-transition: fill 0.3s linear 0.05s;
+  -o-transition: fill 0.3s linear 0.05s;
+  transition: fill 0.3s linear 0.05s;
 }
 
 .contour {
@@ -218,22 +218,12 @@
   outline: none;
   -webkit-box-shadow: 2px 2px 0 var(--accent-color);
           box-shadow: 2px 2px 0 var(--accent-color);
-  -webkit-transition: -webkit-box-shadow 0.3s ease;
-  transition: -webkit-box-shadow 0.3s ease;
-  -o-transition: box-shadow 0.3s ease;
-  transition: box-shadow 0.3s ease;
-  transition: box-shadow 0.3s ease, -webkit-box-shadow 0.3s ease;
 }
 
 .button:hover::before {
   -webkit-transform: scaleX(1);
       -ms-transform: scaleX(1);
           transform: scaleX(1);
-  -webkit-transition: -webkit-transform 0.5s ease-in-out;
-  transition: -webkit-transform 0.5s ease-in-out;
-  -o-transition: transform 0.5s ease-in-out;
-  transition: transform 0.5s ease-in-out;
-  transition: transform 0.5s ease-in-out, -webkit-transform 0.5s ease-in-out;
 }
 .card {
   background-color: var(--main-color);
@@ -276,6 +266,7 @@
   background-image: var(--grad);
   background-repeat: no-repeat;
   background-position: cover;
+  background-attachment: fixed;
   width: clamp(370px, 90%, 700px);
   margin: 100px auto;
   font-size: 18px;
@@ -339,8 +330,6 @@
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
-  width: 100%;
-  margin-top: 50px;
 }
 /* В этом файле уже написаны некоторые базовые стили, которые сбрасывают или преобразуют дефольное браузерное поведение.
 Здесь же лежит утилитарный класс visually-hidden на случай, если нужно скрыть какой-то элемент, но оставить доступным для скринридера.
@@ -424,6 +413,7 @@ ol {
     repeating-linear-gradient(#000 0 2px, transparent 2px 4px),
     linear-gradient(#007f0c, #004306);
   --text-weight: 465;
+  --title-weight: "wght" 785;
   --text-color: #00cc14;
 }
 
@@ -434,6 +424,7 @@ ol {
   repeating-linear-gradient(#d3d3d3 0 2px, transparent 2px 4px),
   linear-gradient(#e7e7e7, #1a1a1a);
   --text-weight: 400;
+  --title-weight: "wght" 700;
   --text-color: #fff;
 }
 /* В этом файле будут храниться все значения переменных в исходном состоянии, а так же их изменения в зависимости от ширины устройства */
@@ -442,6 +433,7 @@ ol {
   --font-main: inter;
   --font-accent: pressstart2p;
   --text-weight: 400;
+  --title-weight: "wght" 700;
   --header-weight: 400px;
   --text-color: #fff;
   --main-color: #fff;
@@ -454,43 +446,13 @@ ol {
   --title-size: clamp(3.063rem, 2.71rem + 1.502vw, 4.063rem);
 }
 .button__text {
-  position: absolute;
-  content: '';
   z-index: 1;
   color: var(--text-color);
-  left: -2px;
-  top: 1px;
   mix-blend-mode: difference;
-  opacity: 0;
   height: 38px;
   width: 130px;
   padding: 9px 17px;
 }
-
-.button__text:hover {
-  opacity: 1;
-  -webkit-transition: opacity 0.6s ease;
-  -o-transition: opacity 0.6s ease;
-  transition: opacity 0.6s ease;
-}
-
-/* .button__text:nth-of-type(2) {
-  position: absolute;
-  z-index: 1;
-  color: var(--main-color);
-  left: -2px;
-  top: 1px;
-  mix-blend-mode: difference;
-  opacity: 0;
-  height: 38px;
-  width: 130px;
-  padding: 9px 17px;
-}
-
-.button__text:nth-of-type(2):hover {
-  opacity: 1;
-  transition: opacity 0.6s ease;
-} */
 .like-icon {
   width: 39px;
   height: 36px;
@@ -589,19 +551,20 @@ ol {
   width: 130px;
   justify-self: flex-end;
 }
+.card__text {
+  line-height: 21px;
+}
 .card__title {
   margin: 5px 10px;
-  font-variation-settings: "wght" 700;
+  font-variation-settings: var(--title-weight);
   font-size: 18px;
-}
-.dialog__button-close-accent {
-  left: 0;
-  top: 0;
-  width: 100%;
-  padding: 10px 0;
 }
 .dialog__button-close {
   margin: 0 30px 30px;
+}
+.dialog__button-close-accent {
+  width: 100%;
+  padding: 10px 0;
 }
 .dialog__content {
   display: grid;
@@ -619,21 +582,14 @@ ol {
   height: 39px;
   width: 39px;
 }
-.footer__button-text {
-  left: -2px;
-  top: -2px;
-  height: 55px;
-  width: 335px;
-  padding: 21px 19px 17px 50px;
-}
 .footer__button {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
   -webkit-box-orient: horizontal;
-  -webkit-box-direction: reverse;
-      -ms-flex-direction: row-reverse;
-          flex-direction: row-reverse;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
@@ -646,14 +602,22 @@ ol {
   height: -moz-fit-content;
   height: fit-content;
 }
+.footer__button-text {
+  height: 5px;
+  width: 271px;
+  padding: 4px 0px 16px 0px;
+  white-space: nowrap;
+}
+.button__icon {
+  margin-right: 6px;
+  width: 21px;
+  mix-blend-mode: difference;
+  color: var(--text-color);
+}
 .button__icon-accent {
-  position: absolute;
-  z-index: 1;
   color: var(--text-color);
   mix-blend-mode: difference;
   opacity: 0;
-  top: 0;
-  left: 0;
   height: 55px;
   width: 335px;
   padding: 17px 275px 17px 0;
@@ -662,14 +626,10 @@ ol {
 .button__icon-accent:hover {
   opacity: 1;
 }
-.button__icon {
-  margin-right: 10px;
-  width: 21px;
-}
 .header__accent {
   font-size: var(--accent-size);
   text-transform: uppercase;
-  margin-bottom: 25px;
+  margin-bottom: 22px;
 }
 .header__container {
   display: -webkit-box;
@@ -747,6 +707,17 @@ ol {
   -webkit-filter: sepia(1) hue-rotate(90deg) blur(2px);
           filter: sepia(1) hue-rotate(90deg) blur(2px);
 }
+.theme-menu__list {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  gap: 8px;
+  margin-left: 20px;
+}
 .theme-menu__button {
   padding: 0;
   border: none;
@@ -821,46 +792,35 @@ ol {
           animation-direction: alternate;
   opacity: 0.6;
 }
-.theme-menu__list {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-  gap: 7px;
-}
+
 @media (width <= 375px) {
   .page {
     width: 100%;
   }
-  .footer__button-text {
-    padding: 51px 18px 0;
-    height: 84px;
-    width: 306px;
-  }
   .footer__button {
     -webkit-box-orient: vertical;
-    -webkit-box-direction: reverse;
-        -ms-flex-direction: column-reverse;
-            flex-direction: column-reverse;
-    gap: 5px;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
     width: 310px;
+  }
+  .footer__button-text {
+    padding: 10px 0px 12px 0px;
+  }
+  .button__icon {
+    width: 28px;
+    margin-right: 0;
   }
   .button__icon-accent {
     height: 84px;
     width: 306px;
     padding: 18px 2px 38px 0;
   }
-  .button__icon {
-    width: 28px;
-    margin-right: 0;
-  }
   .header__container {
     padding: 120px 0px 21px 0px;
   }
 }
+
 @media (prefers-color-scheme: dark) {
   :root {
     --main-color: #000;
@@ -869,9 +829,11 @@ ol {
       repeating-linear-gradient(#000 0 2px, transparent 2px 4px),
       linear-gradient(#007f0c, #004306);
     --text-weight: 465;
+    --title-weight: "wght" 785;
     --text-color: #00cc14;
   }
 }
+
 @media (prefers-color-scheme: light) {
   :root {
     --main-color: #fff;
@@ -880,6 +842,7 @@ ol {
     repeating-linear-gradient(#d3d3d3 0 2px, transparent 2px 4px),
     linear-gradient(#e7e7e7, #1a1a1a);
     --text-weight: 400;
+    --title-weight: "wght" 700;
     --text-color: #fff;
   }
 }

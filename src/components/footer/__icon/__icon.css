@@ -1,6 +1,8 @@
 .button__icon {
-  margin-right: 10px;
+  margin-right: 6px;
   width: 21px;
+  mix-blend-mode: difference;
+  color: var(--text-color);
 }
 
 @media (width <= 375px) {

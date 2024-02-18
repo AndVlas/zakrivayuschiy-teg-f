@@ -1,11 +1,7 @@
 .button__icon-accent {
-  position: absolute;
-  z-index: 1;
   color: var(--text-color);
   mix-blend-mode: difference;
   opacity: 0;
-  top: 0;
-  left: 0;
   height: 55px;
   width: 335px;
   padding: 17px 275px 17px 0;

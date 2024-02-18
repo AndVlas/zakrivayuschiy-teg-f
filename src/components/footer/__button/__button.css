@@ -1,6 +1,6 @@
 .footer__button {
   display: flex;
-  flex-direction: row-reverse;
+  flex-direction: row;
   justify-content: center;
   align-items: center;
   padding: 15px 0;
@@ -11,8 +11,7 @@
 @media (width <= 375px) {
 
   .footer__button {
-    flex-direction: column-reverse;
-    gap: 5px;
+    flex-direction: column;
     width: 310px;
   }
 }
