@@ -1,3 +1,50 @@
+.button {
+  height: 38px;
+  border: 2px solid var(--accent-color);
+  background-color: var(--main-color);
+  cursor: pointer;
+  font-family: var(--font-accent), sans-serif;
+  font-size: 14px;
+  position: relative;
+  -webkit-box-shadow: 0 0 0 var(--accent-color);
+          box-shadow: 0 0 0 var(--accent-color);
+  -webkit-transition: -webkit-box-shadow 0.3s ease;
+  transition: -webkit-box-shadow 0.3s ease;
+  -o-transition: box-shadow 0.3s ease;
+  transition: box-shadow 0.3s ease;
+  transition: box-shadow 0.3s ease, -webkit-box-shadow 0.3s ease;
+}
+
+.button::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-color: var(--accent-color);
+  height: 100%;
+  -webkit-transform: scaleX(0);
+      -ms-transform: scaleX(0);
+          transform: scaleX(0);
+  -webkit-transform-origin: left;
+      -ms-transform-origin: left;
+          transform-origin: left;
+  -webkit-transition: -webkit-transform 0.5s ease-in-out;
+  transition: -webkit-transform 0.5s ease-in-out;
+  -o-transition: transform 0.5s ease-in-out;
+  transition: transform 0.5s ease-in-out;
+  transition: transform 0.5s ease-in-out, -webkit-transform 0.5s ease-in-out;
+}
+
+.button:focus-visible {
+  outline: none;
+  -webkit-box-shadow: 2px 2px 0 var(--accent-color);
+          box-shadow: 2px 2px 0 var(--accent-color);
+}
+
+.button:hover::before {
+  -webkit-transform: scaleX(1);
+      -ms-transform: scaleX(1);
+          transform: scaleX(1);
+}
 /* Опишите в этом файле все keyframes для проекта и стили анимаций иконки Like.
 
 Будьте внимательны! Для корректной работы скриптов на этом сайте нужно, чтобы в HTML некоторые классы были названы особым образом:
@@ -18,7 +65,7 @@
     left: -15px;
   }
 
-  50% {
+  100% {
     left: -19px;
   }
 }
@@ -28,7 +75,7 @@
     left: -15px;
   }
 
-  50% {
+  100% {
     left: -19px;
   }
 }
@@ -178,53 +225,6 @@
     opacity: 1;
   }
 }
-.button {
-  height: 38px;
-  border: 2px solid var(--accent-color);
-  background-color: var(--main-color);
-  cursor: pointer;
-  font-family: var(--font-accent), sans-serif;
-  font-size: 14px;
-  position: relative;
-  -webkit-box-shadow: 0 0 0 var(--accent-color);
-          box-shadow: 0 0 0 var(--accent-color);
-  -webkit-transition: -webkit-box-shadow 0.3s ease;
-  transition: -webkit-box-shadow 0.3s ease;
-  -o-transition: box-shadow 0.3s ease;
-  transition: box-shadow 0.3s ease;
-  transition: box-shadow 0.3s ease, -webkit-box-shadow 0.3s ease;
-}
-
-.button::before {
-  content: "";
-  position: absolute;
-  inset: 0;
-  background-color: var(--accent-color);
-  height: 100%;
-  -webkit-transform: scaleX(0);
-      -ms-transform: scaleX(0);
-          transform: scaleX(0);
-  -webkit-transform-origin: left;
-      -ms-transform-origin: left;
-          transform-origin: left;
-  -webkit-transition: -webkit-transform 0.5s ease-in-out;
-  transition: -webkit-transform 0.5s ease-in-out;
-  -o-transition: transform 0.5s ease-in-out;
-  transition: transform 0.5s ease-in-out;
-  transition: transform 0.5s ease-in-out, -webkit-transform 0.5s ease-in-out;
-}
-
-.button:focus-visible {
-  outline: none;
-  -webkit-box-shadow: 2px 2px 0 var(--accent-color);
-          box-shadow: 2px 2px 0 var(--accent-color);
-}
-
-.button:hover::before {
-  -webkit-transform: scaleX(1);
-      -ms-transform: scaleX(1);
-          transform: scaleX(1);
-}
 .card {
   background-color: var(--main-color);
   border: 2px solid var(--accent-color);
@@ -319,7 +319,7 @@
 @font-face {
   font-family: Inter;
   src: url("fonts/Inter-Variable.woff2") format('woff2 supports variations'),
-    url("fonts/Inter-Variable.woff2") format('woff2-variations'), sans-serif;
+    url("fonts/Inter-Variable.woff2") format('woff2-variations');
   font-display: swap;
   font-weight: 400px 785px;
 }
@@ -330,9 +330,6 @@
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
-}
-.header {
-  font-family: var(--font-accent), sans-serif;
 }
 /* В этом файле уже написаны некоторые базовые стили, которые сбрасывают или преобразуют дефольное браузерное поведение.
 Здесь же лежит утилитарный класс visually-hidden на случай, если нужно скрыть какой-то элемент, но оставить доступным для скринридера.
@@ -389,6 +386,9 @@ ol {
           clip-path: inset(50%);
   white-space: nowrap;
 }
+.header {
+  font-family: var(--font-accent), sans-serif;
+}
 .main {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -412,7 +412,7 @@ ol {
   --grad: repeating-linear-gradient(90deg, #000 0 2px, transparent 2px 4px),
     repeating-linear-gradient(#000 0 2px, transparent 2px 4px),
     linear-gradient(#007f0c, #004306);
-  --text-weight: 465;
+  --text-weight: "wght" 465;
   --title-weight: "wght" 785;
   --text-color: #00cc14;
 }
@@ -423,7 +423,7 @@ ol {
   --grad: repeating-linear-gradient(90deg, #d3d3d3 0 2px, transparent 2px 4px),
   repeating-linear-gradient(#d3d3d3 0 2px, transparent 2px 4px),
   linear-gradient(#e7e7e7, #1a1a1a);
-  --text-weight: 400;
+  --text-weight: "wght" 400;
   --title-weight: "wght" 700;
   --text-color: #fff;
 }
@@ -432,7 +432,7 @@ ol {
 :root {
   --font-main: inter;
   --font-accent: pressstart2p;
-  --text-weight: 400;
+  --text-weight: "wght" 400;
   --title-weight: "wght" 700;
   --header-weight: 400px;
   --text-color: #fff;
@@ -449,7 +449,6 @@ ol {
   z-index: 1;
   color: var(--text-color);
   mix-blend-mode: difference;
-  height: 38px;
   width: 130px;
   padding: 9px 17px;
 }
@@ -553,6 +552,7 @@ ol {
 }
 .card__text {
   line-height: 21px;
+  font-variation-settings: var(--text-weight);
 }
 .card__title {
   margin: 5px 10px;
@@ -596,16 +596,15 @@ ol {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  padding: 15px 0;
+  padding: 15px 0px;
   width: clamp(306px, 90%, 335px);
   height: -webkit-fit-content;
   height: -moz-fit-content;
   height: fit-content;
 }
 .footer__button-text {
-  height: 5px;
   width: 271px;
-  padding: 4px 0px 16px 0px;
+  padding: 4px 0px;
   white-space: nowrap;
 }
 .button__icon {
@@ -801,10 +800,11 @@ ol {
     -webkit-box-direction: normal;
         -ms-flex-direction: column;
             flex-direction: column;
+    padding: 15px 0px 10px 0px;
     width: 310px;
   }
   .footer__button-text {
-    padding: 10px 0px 12px 0px;
+    padding-top: 10px;
   }
   .button__icon {
     width: 28px;
@@ -826,7 +826,7 @@ ol {
     --grad: repeating-linear-gradient(90deg, #000 0 2px, transparent 2px 4px),
       repeating-linear-gradient(#000 0 2px, transparent 2px 4px),
       linear-gradient(#007f0c, #004306);
-    --text-weight: 465;
+    --text-weight: "wght" 465;
     --title-weight: "wght" 785;
     --text-color: #00cc14;
   }
@@ -838,7 +838,7 @@ ol {
     --grad: repeating-linear-gradient(90deg, #d3d3d3 0 2px, transparent 2px 4px),
     repeating-linear-gradient(#d3d3d3 0 2px, transparent 2px 4px),
     linear-gradient(#e7e7e7, #1a1a1a);
-    --text-weight: 400;
+    --text-weight: "wght" 400;
     --title-weight: "wght" 700;
     --text-color: #fff;
   }

@@ -1,13 +1,12 @@
 .footer__button-text {
-  height: 5px;
   width: 271px;
-  padding: 4px 0px 16px 0px;
+  padding: 4px 0px;
   white-space: nowrap;
 }
 
 @media (width <= 375px) {
 
   .footer__button-text {
-    padding: 10px 0px 12px 0px;
+    padding-top: 10px;
   }
 }

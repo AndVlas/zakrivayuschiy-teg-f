@@ -3,7 +3,7 @@
   flex-direction: row;
   justify-content: center;
   align-items: center;
-  padding: 15px 0;
+  padding: 15px 0px;
   width: clamp(306px, 90%, 335px);
   height: fit-content;
 }
@@ -12,6 +12,7 @@
 
   .footer__button {
     flex-direction: column;
+    padding: 15px 0px 10px 0px;
     width: 310px;
   }
 }

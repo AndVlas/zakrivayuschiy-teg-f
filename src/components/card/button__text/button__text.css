@@ -2,7 +2,6 @@
   z-index: 1;
   color: var(--text-color);
   mix-blend-mode: difference;
-  height: 38px;
   width: 130px;
   padding: 9px 17px;
 }
